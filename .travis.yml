@@ -1,6 +1,6 @@
 language: python
 sudo: required
-
-install: sudo pip install gpustat
-
-script: sudo gpustat -cp --debug
+install: skip
+script:
+- sudo lspci -vnn | grep -A 10 NVIDIA
+- sudo lshw -numeric -C display
