@@ -5,7 +5,9 @@ addons:
     packages:
     - nvidia-384
     - nvidia-cuda-toolkit
+    - nvidia-modprobe
 script:
+- sudo nvidia-modprobe
 - sudo lspci -vnn | grep -A 10 NVIDIA
 - sudo lshw -numeric -C display
 - pip install gpustat
