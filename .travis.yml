@@ -1,6 +1,12 @@
 language: python
 sudo: required
-install: skip
+addons:
+  apt:
+    packages:
+    - nvidia-384
+    - nvidia-cuda-toolkit
 script:
 - sudo lspci -vnn | grep -A 10 NVIDIA
 - sudo lshw -numeric -C display
+- pip install gpustat
+- gpustat -cp --debug
