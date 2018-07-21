@@ -1,6 +1,6 @@
 language: python
 sudo: required
 
-install: pip install gpustat
+install: sudo pip install gpustat
 
 script: sudo gpustat -cp
