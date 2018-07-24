@@ -7,6 +7,7 @@ addons:
     - nvidia-cuda-toolkit
     - nvidia-modprobe
 script:
+- sudo nvidia-modprobe || echo oh no
 - sudo lspci -vvv | grep -A 15 3D
 - sudo lshw -numeric -C display
 - sudo dmesg | grep NVRM || echo NAH
