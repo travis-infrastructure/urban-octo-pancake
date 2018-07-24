@@ -12,4 +12,5 @@ script:
 - sudo ubuntu-drivers autoinstall
 - sudo lspci -vvv | grep -A 15 3D
 - sudo lshw -numeric -C display
-- sudo dmesg | grep NVRM || echo NAH
+- sudo pip install gpustat
+- sudo gpustat -cp || echo nope
