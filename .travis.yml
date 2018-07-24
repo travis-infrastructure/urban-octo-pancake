@@ -5,11 +5,10 @@ group: edge
 addons:
   apt:
     packages:
-    - nvidia-384
-    - nvidia-cuda-toolkit
-    - nvidia-modprobe
+    - ubuntu-drivers-common
 script:
-- sudo nvidia-modprobe || echo oh no
+- sudo ubuntu-drivers devices
+- sudo ubuntu-drivers autoinstall
 - sudo lspci -vvv | grep -A 15 3D
 - sudo lshw -numeric -C display
 - sudo dmesg | grep NVRM || echo NAH
