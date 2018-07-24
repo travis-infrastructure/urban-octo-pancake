@@ -1,5 +1,7 @@
 language: python
 sudo: required
+dist: xenial
+group: edge
 addons:
   apt:
     packages:
