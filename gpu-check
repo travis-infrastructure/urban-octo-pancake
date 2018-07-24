@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -o errexit
+set -o xtrace
+
+apt-get update -y
+apt-get install -yq linux-headers-$(uname -r) ubuntu-drivers-common
+ubuntu-drivers devices
+ubuntu-drivers autoinstall
+lspci -vvv | grep -A 15 3D
+lshw -numeric -C display
+pip install gpustat
+gpustat -cp || echo nope
