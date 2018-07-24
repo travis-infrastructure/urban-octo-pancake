@@ -7,6 +7,7 @@ addons:
     packages:
     - ubuntu-drivers-common
 script:
+- sudo apt-get install -yqq linux-headers-$(uname -r)
 - sudo ubuntu-drivers devices
 - sudo ubuntu-drivers autoinstall
 - sudo lspci -vvv | grep -A 15 3D
