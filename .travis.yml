@@ -1,5 +1,7 @@
-language: python
-sudo: required
-dist: xenial
+language: bash
+os: windows
+dist: server-2016
 group: edge
-script: sudo ./gpu-check
+script:
+- find "${TRAVIS_BUILD_DIR}" -type f
+- ls -l /c/windows
