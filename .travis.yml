@@ -1,4 +1,5 @@
 language: bash
+sudo: required
 os: windows
 dist: server-2016
 group: edge
