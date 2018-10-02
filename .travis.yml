@@ -4,5 +4,4 @@ os: windows
 dist: server-2016
 group: edge
 script:
-- find "${TRAVIS_BUILD_DIR}" -type f
-- ls -l /c/windows
+- find /c -iname curl.exe
