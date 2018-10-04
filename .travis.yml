@@ -5,4 +5,4 @@ dist: server-2016
 group: edge
 script:
 - find /c -iname curl.exe
-- curl.exe https://google.com
+- /c/tools/ruby25/msys64/usr/bin/curl.exe https://google.com
